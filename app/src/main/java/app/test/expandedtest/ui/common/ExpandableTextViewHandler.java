@@ -16,15 +16,21 @@ public class ExpandableTextViewHandler {
 
   public void initListener() {
 
+    //создаем слушатель для каждой вьюшки
     OnClickListener onClickListener = view -> {
 
       ExpandableTextView current = (ExpandableTextView) view.getParent().getParent().getParent();
 
+      //При нажатии на любую из вью, перебираем список добавленных вьюшек
       Observable.fromIterable(views)
+           //блокируем для всех нажатия, чтобы не сломать анимацию
           .doOnNext(item -> item.getIcon().setClickable(false))
+          //фильтрируем чтобы среди этого списка не было текущей вьюшки
           .filter(item -> item != current)
+          //если вьюшка открыта, закрываем, иначе просто пропускаем ее
           .flatMapCompletable(item -> item.isExpanded ? item.collapse() : Completable.complete())
           .andThen(current.isExpanded ? current.collapse() : current.expanded())
+          //по окончанию работы, возвращаем обратно нажатия
           .subscribe(() -> {
             for (ExpandableTextView expandableTextView : views) {
               expandableTextView.getIcon().setClickable(true);
