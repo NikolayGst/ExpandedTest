@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical"
+  tools:context=".ui.main.MainActivity">
+
+  <app.test.expandedtest.ui.common.ExpandableTextView
+    android:id="@+id/view1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:etv_text_title="How can i create my trip?"
+    android:layout_marginRight="16dp"
+    android:layout_marginLeft="16dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp"
+    app:etv_text_desc="Lorem ipsum dolor sit amet,`consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. "/>
+
+  <app.test.expandedtest.ui.common.ExpandableTextView
+    android:id="@+id/view2"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:etv_text_title="How to add people to the trip?"
+    android:layout_marginRight="16dp"
+    android:layout_marginLeft="16dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp"
+    app:etv_text_desc="Lorem ipsum dolor sit amet,consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. "/>
+
+  <app.test.expandedtest.ui.common.ExpandableTextView
+    android:id="@+id/view3"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:etv_text_title="How to edit a trip?"
+    android:layout_marginRight="16dp"
+    android:layout_marginLeft="16dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp"
+    app:etv_text_desc="Lorem ipsum dolor sit amet,consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. "/>
+
+  <app.test.expandedtest.ui.common.ExpandableTextView
+    android:id="@+id/view4"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:etv_text_title="How to pay for the trip?"
+    android:layout_marginRight="16dp"
+    android:layout_marginLeft="16dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp"
+    app:etv_text_desc="Lorem ipsum dolor sit amet,consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. "/>
+
+</LinearLayout>
