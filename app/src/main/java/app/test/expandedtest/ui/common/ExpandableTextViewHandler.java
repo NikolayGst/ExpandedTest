@@ -25,43 +25,18 @@ public class ExpandableTextViewHandler {
           .filter(item -> item != current)
           .flatMapCompletable(item -> item.isExpanded ? item.collapse() : Completable.complete())
           .andThen(current.isExpanded ? current.collapse() : current.expanded())
-        .subscribe(() -> {
-          for (ExpandableTextView expandableTextView : views) {
-            expandableTextView.getIcon().setClickable(true);
-          }
-        });
+          .subscribe(() -> {
+            for (ExpandableTextView expandableTextView : views) {
+              expandableTextView.getIcon().setClickable(true);
+            }
+          });
 
     };
 
+    //инициализируем для каждой вью слушатель выше
     for (ExpandableTextView expandableTextView : views) {
       expandableTextView.getIcon().setOnClickListener(onClickListener);
     }
 
   }
-
-  /*
-  * lass ExpandableHelper(private val views: List<ExpandableTextView>) {
-
-        fun initListener() {
-
-            val onClickCardListener: (View) -> Unit = { view ->
-                val current = view as ExpandableTextView
-
-                Observable.fromIterable(views)
-                        .doOnNext { it.isClickable = false }
-                        .filter { it != current }
-                        .flatMapCompletable { if (it.isExpanded) it.collapse() else Completable.complete() }
-                        .andThen(if (current.isExpanded) current.collapse() else current.expanded())
-                        .subscribe { views.forEach { it.isClickable = true } }
-
-            }
-
-            views.forEach { it.setOnClickListener(onClickCardListener) }
-
-        }
-
-    }*/
-
-
-
 }
