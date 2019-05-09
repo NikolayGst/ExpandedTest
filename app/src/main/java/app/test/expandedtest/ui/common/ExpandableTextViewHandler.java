@@ -29,6 +29,7 @@ public class ExpandableTextViewHandler {
           .filter(item -> item != current)
           //если вьюшка открыта, закрываем, иначе просто пропускаем ее
           .flatMapCompletable(item -> item.isExpanded ? item.collapse() : Completable.complete())
+          //после закрытия, обрабатываем текущую вьюшку
           .andThen(current.isExpanded ? current.collapse() : current.expanded())
           //по окончанию работы, возвращаем обратно нажатия
           .subscribe(() -> {
